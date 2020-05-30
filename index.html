@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+
+        body{
+            margin:0px;
+            padding:0px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .body
+        {
+            width:100vw;
+            height:100vh;
+            
+        }
+
+        img{
+             width:100vw;
+            height:100vh;
+            /* display: none; */
+        }
+
+        #loaderImage
+        {
+            position:absolute;
+            top:48%;
+            left:48%;
+            /* display:none; */
+        }
+
+        #edit
+        {
+            position:absolute;
+            bottom:15%;
+            left:2%;
+            color:red;
+            font-size: 1.5em;
+            font-family: cursive;
+            display: none;
+            
+        }
+
+        @media screen and (max-width:700px)
+        {
+            #edit
+            {
+                font-size:15px;
+                color:red;
+            }
+        }
+
+ @media screen and (max-width:550px)
+        {
+            #edit
+            {
+                font-size:10px;
+                color:red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="body">
+    <img  id="img" src="https://source.unsplash.com/2000x1000">
+
+    <div id="loaderImage"></div>
+    <div id="edit">
+            <h1 style="outline:none;">Hello Jarvis, Please Edit Me </h1>
+            <p style="color:rgb(86, 230, 86)">Welcome To My Website</p>        
+        </div>
+    </div>
+<div id="loaderImage"></div>
+<script type="text/javascript" src="preloader.js"></script>    
+<script>
+        document.getElementById("edit").children[0].contentEditable="true";
+        window.addEventListener("load",()=>
+        {
+            // document.getElementById("img").style.display="block";
+            document.getElementById("loaderImage").style.display="none";
+            setTimeout(() => {
+                document.getElementById("edit").style.display="block";
+            }, 2000);
+        }
+        )
+
+    </script>
+    
+</body>
+</html>
